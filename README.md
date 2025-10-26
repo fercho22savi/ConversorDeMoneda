@@ -17,7 +17,7 @@ El sistema permite convertir entre diferentes divisas e incluye **banderas repre
 - `gui` → interfaz gráfica y renderizado de banderas  
 - `modelo` → clase que representa una moneda  
 - `principal` → clase principal del programa
-  Captures
+  Captures<br>
   <img width="485" height="338" alt="principal" src="https://github.com/user-attachments/assets/b43db282-b363-427b-bc91-e338130ae754" /><br>
   <img width="487" height="336" alt="convercioncop-usd" src="https://github.com/user-attachments/assets/a6e88194-2330-4d1c-b9f5-b8ed23e4a8cf" /><br>
   <img width="487" height="343" alt="conversionbrl-usd" src="https://github.com/user-attachments/assets/a90228d9-2ec4-4b08-865e-7c908169cbf1" /><br>

@@ -14,7 +14,8 @@ public class ConversorServicio {
         Moneda moneda = api.obtenerTasas(desde);
         Double tasa = moneda.getConversion_rates().get(hacia);
 
-        if (tasa == null) throw new IllegalArgumentException("No se encontró tasa de conversión para " + hacia);
+        if (tasa == null)
+            throw new IllegalArgumentException("No se encontró tasa de conversión para " + hacia);
 
         return valor * tasa;
     }

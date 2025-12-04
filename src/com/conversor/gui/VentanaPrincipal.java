@@ -1,17 +1,25 @@
 package com.conversor.gui;
 
+import com.conversor.modelo.HistorialEntrada;
 import com.conversor.servicio.ConversorServicio;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 public class VentanaPrincipal extends JFrame {
+
     private final JComboBox<String> comboDesde, comboHacia;
     private final JTextField txtValor;
     private final JLabel lblResultado;
     private final ConversorServicio servicio = new ConversorServicio();
+
+    // LISTA DE HISTORIAL
+    private final List<HistorialEntrada> historial = new ArrayList<>();
 
     private final Map<String, String> monedas = new LinkedHashMap<>() {{
         put("USD", "Dólar estadounidense");
@@ -24,9 +32,9 @@ public class VentanaPrincipal extends JFrame {
     }};
 
     public VentanaPrincipal() {
-        setTitle("Conversor de Monedas ");
+        setTitle("Conversor de Monedas");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(500, 350);
+        setSize(500, 400);
         setLocationRelativeTo(null);
         setLayout(new GridBagLayout());
         getContentPane().setBackground(new Color(40, 44, 52));
@@ -66,6 +74,12 @@ public class VentanaPrincipal extends JFrame {
         gbc.gridy = 4;
         add(lblResultado, gbc);
 
+        // NUEVO BOTÓN: VER HISTORIAL
+        JButton btnHistorial = new JButton("Historial");
+        btnHistorial.addActionListener(e -> new VentanaHistorial(this, historial));
+        gbc.gridy = 5;
+        add(btnHistorial, gbc);
+
         setVisible(true);
     }
 
@@ -74,13 +88,25 @@ public class VentanaPrincipal extends JFrame {
             String desde = comboDesde.getSelectedItem().toString();
             String hacia = comboHacia.getSelectedItem().toString();
             double valor = Double.parseDouble(txtValor.getText());
+
             double resultado = servicio.convertir(desde, hacia, valor);
 
-            lblResultado.setText(String.format("%.2f %s = %.2f %s", valor, desde, resultado, hacia));
+            lblResultado.setText(String.format("%.2f %s = %.2f %s",
+                    valor, desde, resultado, hacia));
+
+            // REGISTRAR EN HISTORIAL
+            historial.add(new HistorialEntrada(desde, hacia, valor, resultado));
+
         } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(this, "Ingrese un valor numérico válido.", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this,
+                    "Ingrese un valor numérico válido.",
+                    "Error",
+                    JOptionPane.ERROR_MESSAGE);
         } catch (Exception ex) {
-            JOptionPane.showMessageDialog(this, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this,
+                    ex.getMessage(),
+                    "Error",
+                    JOptionPane.ERROR_MESSAGE);
         }
     }
 }

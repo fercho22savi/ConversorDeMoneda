@@ -48,31 +48,31 @@ El sistema permite convertir entre diferentes divisas e incluye **banderas repre
 
 
 
-🌐 API utilizada
+🌐 API utilizada<br>
 
 El proyecto consume datos de una API pública de tasas de cambio (como ExchangeRate API
- o similar).
-Esto permite mantener actualizadas las conversiones sin necesidad de actualizar el programa manualmente.
+ o similar).<br>
+Esto permite mantener actualizadas las conversiones sin necesidad de actualizar el programa manualmente.<br>
 
-🎨 Diseño
+🎨 Diseño<br>
 
-Paleta de colores: tonos oscuros con contraste suave
+Paleta de colores: tonos oscuros con contraste suave<br>
 
-Tipografía moderna y legible
+Tipografía moderna y legible<br>
 
-Íconos de banderas adaptados y escalados para el menú de selección
+Íconos de banderas adaptados y escalados para el menú de selección<br>
 
-Fuente visual similar a aplicaciones de escritorio modernas
+Fuente visual similar a aplicaciones de escritorio modernas<br>
 
 👨‍💻 Autor
 
-Fernando Saldaña
-📍 Bogotá, Colombia
-🎓 Tecnólogo en Análisis y Desarrollo de Sistemas de Información - SENA
-💻 Desarrollador Java | Entusiasta de la ciberseguridad | Apasionado por la ingeniería de software
+Fernando Saldaña<br>
+📍 Bogotá, Colombia<br>
+🎓 Tecnólogo en Análisis y Desarrollo de Sistemas de Información - SENA<br>
+💻 Desarrollador Java | Entusiasta de la ciberseguridad | Apasionado por la ingeniería de software<br>
 
-🧾 Licencia
+🧾 Licencia<br>
 
-Este proyecto se distribuye bajo la licencia MIT, lo que significa que puedes usarlo, modificarlo y compartirlo libremente citando al autor original.
+Este proyecto se distribuye bajo la licencia MIT, lo que significa que puedes usarlo, modificarlo y compartirlo libremente citando al autor original.<br>
 
-⭐ Si te gustó este proyecto, ¡no olvides dejar una estrella en el repositorio!
+⭐ Si te gustó este proyecto, ¡no olvides dejar una estrella en el repositorio!<br>
